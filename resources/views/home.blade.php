@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a href="#" class="btn btn-success btn-sm">
+                    <a href="{{route('events.create')}}" class="btn btn-success btn-sm">
                         <i class="glyphicon glyphicon-plus"></i>
                         Post Your Event
                     </a>
