@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 use App\Http\Requests;
 use App\Event;
@@ -32,9 +33,16 @@ class EventController extends Controller
         $event->description = $request->description;
         $event->date = $request->date;
         $event->venue = $request->venue;
+   
+        $dir = 'uploads/';
+        $extension = strtolower($request->file('image')->getClientOriginalExtension()); // get image extension
+        $fileName = str_random() . '.' . $extension; // rename image
+        $request->file('image')->move($dir, $fileName);
+        $event->image = $fileName;
+
         $event->save();
 
-        return redirect()->route('home')->with('success','New Event Created Successfully');
+        return redirect()->route('events.index')->with('success','New Event Created Successfully');
 
     }
 

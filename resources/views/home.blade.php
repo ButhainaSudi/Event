@@ -6,10 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{route('events.create')}}" class="btn btn-success btn-sm">
-                        <i class="glyphicon glyphicon-plus"></i>
-                        Post Your Event
-                    </a>
+                <table><tr><td width=90%><h4>The Happening Parties</h4></td>
+                    <td><a href="{{route('events.create')}}" class="btn btn-success btn-sm glyphicon glyphicon-plus">Post Your Event</a>
+                    </td></tr></table>
                 </div>
 
                 <div class="card-body">
