@@ -24,4 +24,15 @@ class CommentController extends Controller
         return view('comments.create');
     }
 
+    public function store(Request $request)
+    {
+        $comment = new Comment;
+        $comment->user_id = Auth::user()->id;
+        $comment->event_id = Event::find($id);
+        $comment->comment = $request->comment;
+        $comment->save();
+
+        return redirect()->route('comments.index')->with('success','New comment Created Successfully');
+    }
+
 }
