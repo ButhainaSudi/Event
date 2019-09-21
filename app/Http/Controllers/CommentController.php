@@ -12,6 +12,11 @@ use Auth;
 
 class CommentController extends Controller
 {
-
+    public function index()
+    {
+        $comment = Comment::all();
+        return view('comments.index',compact('comment'));
+ 
+    }
 
 }
