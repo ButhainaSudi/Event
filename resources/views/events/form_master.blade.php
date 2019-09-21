@@ -71,8 +71,7 @@
 
                 <div class="col-md-8">
                     <div class="form-group {{ $errors->has('title') ? 'has-error' : "" }}">
-                        <!--<img id="preview" src="{{asset((isset($image) && $image->image!='')?'uploads/'.$image->image:'images/noimage.jpg')}}" height="200px" width="200px"/> !-->
-                        {!! Form::file('image',["class"=>"form-control"]) !!}
+                       {!! Form::file('image',["class"=>"form-control"]) !!}
                         {{ $errors->first('venue', '<p class="help-block">:message</p>') }}
                     </div>
                     <br/>

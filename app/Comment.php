@@ -5,13 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str as generate;
 
-class Event extends Model
+class Comment extends Model
 {
     public $incrementing = false;
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'title', 'description', 'date','venue',
+        'comment',
     ];
 
     public static function boot(){
@@ -22,8 +22,9 @@ class Event extends Model
         });
     }
 
-    public function comments()
+    public function event()
     {
-        return $this->hasMany('App\Comment');
+        return $this->belongsTo('App\Event');
     }
+
 }
