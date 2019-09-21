@@ -21,4 +21,9 @@ class Event extends Model
             $user->id = (string) generate::uuid();
         });
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
