@@ -42,7 +42,7 @@
                 <div class="form-group {{ $errors->has('title') ? 'has-error' : "" }}">
                     <!--{<input type="date" class="form-control">
                     {{ Form::date('date', '', array('id' => 'datepicker')) }}!-->
-                    {{ Form::date('date', \Carbon\Carbon::now()) }}
+                    {{ Form::date('date', \Carbon\Carbon::now(), ['class'=>'form-control']) }}
                     {{ $errors->first('date', '<p class="help-block">:message</p>') }}
                 </div>
             </div>
