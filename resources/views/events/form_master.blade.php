@@ -74,10 +74,7 @@
                        {!! Form::file('image',["class"=>"form-control"]) !!}
                         {{ $errors->first('venue', '<p class="help-block">:message</p>') }}
                     </div>
-                    <br/>
-                    <a href="javascript:changeProfile();">Change</a> |
-                    <a style="color: red" href="javascript:removeImage()">Remove</a>
-                    <input type="hidden" style="display: none" value="0" name="remove" id="remove">
+                    
                 </div>
             </div>
 
