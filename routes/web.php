@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'EventController@index')->name('home');
 Route::resource('events','EventController');
+Route::resource('comments','CommentController');

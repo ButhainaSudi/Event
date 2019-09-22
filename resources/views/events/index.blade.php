@@ -33,10 +33,20 @@
                                     <p>Venue <strong>{{ $value->venue }}</strong></p>
                                     <img src="{{url($value->image? 'uploads/'.$value->image:'images/noimage.jpg')}}" style="width:100%">
                                     <br><hr>
+
                                     <p>
                                     <button class="w3-button w3-green w3-round-large" style="width:100%"><h3>Attend</h3>
                                     </button>
                                     </p>
+                                    
+                                    {{ Form::open(['route'=>'comments.store', 'method'=>'POST','files'=> true]) }}
+                                        <input type="hidden" name="event_id" value="{{ $value->id }}">
+
+                                        @include('comments.form_master')
+                                            
+                                    {{ form::close() }}
+                                    
+                                    
                                 
                                 </div>
                         </div>

@@ -28,11 +28,11 @@ class CommentController extends Controller
     {
         $comment = new Comment;
         $comment->user_id = Auth::user()->id;
-        $comment->event_id = Event::find($id);
+        $comment->event_id = $request->event_id;
         $comment->comment = $request->comment;
-        $comment->save();
+        $comment->save();    
 
-        return redirect()->route('comments.index')->with('success','New comment Created Successfully');
+        return redirect()->route('events.index')->with('success','New comment Created Successfully');
     }
 
 }
