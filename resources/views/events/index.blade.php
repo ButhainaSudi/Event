@@ -40,7 +40,8 @@
                                     </p>
                                     
                                     {{ Form::open(['route'=>'comments.store', 'method'=>'POST','files'=> true]) }}
-                                        
+                                        <input type="hidden" name="event_id" value="{{ $value->id }}">
+
                                         @include('comments.form_master')
                                             
                                     {{ form::close() }}
