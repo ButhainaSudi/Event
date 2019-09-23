@@ -34,8 +34,16 @@
                                     <img src="{{url($value->image? 'uploads/'.$value->image:'images/noimage.jpg')}}" style="width:100%">
                                     <br><hr>
 
+                                    <?php
+                                        //$event = App\User::find(1);
+                                        $number_of_attendants=0;
+                                        foreach ($value->users as $attendant)
+                                        {
+                                            $number_of_attendants++;
+                                        }
+                                    ?>
                                     <p>
-                                    <button class="w3-button w3-green w3-round-large" style="width:100%"><h3>Attend</h3>
+                                    <button class="w3-button w3-green w3-round-large" style="width:100%"><h3>Attending( {{ $number_of_attendants }} )</h3>
                                     </button>
                                     </p>
                                     
