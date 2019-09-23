@@ -46,9 +46,9 @@
 
                                     @foreach ($listcomments as $listcomments) 
                                     <?php
-                                        $a = $listcomments->user()->pluck('name');
+                                        $commentwriters = $listcomments->user()->pluck('name');
                                     ?>
-                                        <p><strong>{{ $a }}</strong> {{ $listcomments->comment }}</p>
+                                        <p><strong>{{ $commentwriters }}</strong> {{ $listcomments->comment }}</p>
                                     @endforeach
                                     
                                     {{ Form::open(['route'=>'comments.store', 'method'=>'POST','files'=> true]) }}
