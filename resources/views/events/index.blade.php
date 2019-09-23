@@ -39,6 +39,12 @@
                                     </button>
                                     </p>
                                     
+                                    <?php
+                                        $listcomments = $value->comments()->pluck('comment');
+                                    ?>
+
+
+                                    
                                     {{ Form::open(['route'=>'comments.store', 'method'=>'POST','files'=> true]) }}
                                         <input type="hidden" name="event_id" value="{{ $value->id }}">
 
@@ -50,7 +56,7 @@
                                 
                                 </div>
                         </div>
-                <br><br>
+                <br><br> 
                 @endforeach
                 
                 </div>
