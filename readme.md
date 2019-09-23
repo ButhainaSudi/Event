@@ -13,4 +13,4 @@ To install and run the project:
 - Do user Registration
 
 The live staging site on Heroku is :
-- LINK
+- LINK (will be added soon)
