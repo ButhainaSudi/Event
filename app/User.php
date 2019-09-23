@@ -47,4 +47,9 @@ class User extends Authenticatable
             $user->id = (string) generate::uuid();
         });
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
