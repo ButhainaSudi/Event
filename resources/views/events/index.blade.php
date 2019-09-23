@@ -40,12 +40,15 @@
                                     </p>
                                     
                                     <?php
-                                        $listcomments = $value->comments()->pluck('comment');
+                                        $listcomments = $value->comments()->get();
+                                        
                                     ?>
 
                                     @foreach ($listcomments as $listcomments) 
-                                        <p>{{ $listcomments }}</p>
-                                        
+                                    <?php
+                                        $commentwriters = $listcomments->user()->pluck('name');
+                                    ?>
+                                        <p><strong>{{ $commentwriters }}</strong> {{ $listcomments->comment }}</p>
                                     @endforeach
                                     
                                     {{ Form::open(['route'=>'comments.store', 'method'=>'POST','files'=> true]) }}
