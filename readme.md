@@ -8,6 +8,7 @@ Expected Fuctionalities:
 - User Registration
 - Create and Post an Event (birthday, gathering, auction etc)
 - Attendants management 
+- Filter events according to location
 
 To install and run the project:
 - Clone the repo
