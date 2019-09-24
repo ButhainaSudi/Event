@@ -7,6 +7,7 @@ This web app is focused to:
 Expected Fuctionalities:
 - User Registration
 - Create and Post an Event (birthday, gathering, auction etc)
+- Attendants management 
 
 To install and run the project:
 - Clone the repo
