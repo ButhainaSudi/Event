@@ -4,6 +4,9 @@ This web app is focused to:
 - Create, post and share various social events. Such as; Birthday parties, Friends get together, weekend getouts and the like.
 - It monitors atendees and provides audience for the event.
 
+Expected Fuctionalities:
+- User Registration
+
 To install and run the project:
 - Clone the repo
 - Run it
