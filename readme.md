@@ -9,6 +9,7 @@ Expected Fuctionalities:
 - Create and Post an Event (birthday, gathering, auction etc)
 - Attendants management 
 - Filter events according to location
+- Following & Unfollowing
 
 To install and run the project:
 - Clone the repo
