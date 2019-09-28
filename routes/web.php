@@ -18,5 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'EventController@index')->name('home');
-Route::resource('events','EventController');
+Route::resource('events','EventController')->middleware('auth');
 Route::resource('comments','CommentController');
