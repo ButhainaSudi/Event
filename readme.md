@@ -17,7 +17,11 @@ This web app is focused to:
 ```
 # Install Dependencies
 ```sh
- $Composer Install
+ $ Composer Install
+```
+# Generate Application Key 
+```sh
+ $ php artisan key:generate
 ```
 
 ```sh
@@ -34,4 +38,4 @@ $ php artisan serve
 ```
 
 ## The live staging site on Heroku is :
-- LINK (will be added soon)
+- LINK (will be added soon) :smiley:
