@@ -32,7 +32,7 @@ class CommentController extends Controller
         $comment->comment = $request->comment;
         $comment->save();    
 
-        return redirect()->route('events.index')->with('success','New comment Created Successfully');
+        return redirect()->route('events.index');
     }
 
 }

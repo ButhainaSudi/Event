@@ -69,7 +69,7 @@
 
                 <div class="col-md-8">
                     <div class="form-group {{ $errors->has('title') ? 'has-error' : "" }}">
-                       {!! Form::file('image',["class"=>"form-control"]) !!}
+                       {!! Form::file('image',["class"=>"form-control", "accept"=>"image/gif,image/jpeg,image/png,image/jpg"]) !!}
                         {{ $errors->first('venue', '<p class="help-block">:message</p>') }}
                     </div>
                     

@@ -12,11 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('auth.register');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'EventController@index')->name('home');
-Route::resource('events','EventController');
-Route::resource('comments','CommentController');
+Route::resource('events','EventController')->middleware('auth');
+Route::resource('comments','CommentController')->middleware('auth');
+Route::resource('eventuser','EventUserController');
