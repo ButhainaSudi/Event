@@ -21,6 +21,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -38,12 +44,12 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 <style>
-    .bgimg{
-        background: url("/bg.jpg");
-    }
+    h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+    
 </style>
 </head>
-<body class="bgimg">
+<body class="w3-light-grey">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -75,7 +81,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Mr {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -84,8 +90,17 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('profile-form').submit();">
+                                        {{ __('My Profile') }}
+                                    </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+
+                                    <form id="profile-form" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
@@ -124,8 +139,33 @@
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <script>
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $( ".datepicker" ).datepicker({
+        format:"dd/mm/yyyy"
+    });
   });
   </script>
+
+<script>
+    // Toggle between hiding and showing blog replies/comments
+    document.getElementById("myBtn").click();
+    function myFunction(id) 
+    {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) 
+        {
+            x.className += " w3-show";
+        } 
+        else 
+        { 
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "✓ Attending";
+}
+</script>
+
 </body>
 </html>
