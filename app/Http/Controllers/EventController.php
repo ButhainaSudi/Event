@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\File;
 
 use App\Http\Requests;
 use App\Event;
+use App\Attendance;
 use Auth;
 
 
@@ -27,6 +28,7 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
+        if($request->condition!=1){
         $event = new Event;
         $event->user_id = Auth::user()->id;
         $event->title = $request->title;
@@ -41,8 +43,17 @@ class EventController extends Controller
         $event->image = $fileName;
 
         $event->save();
-
         return redirect()->route('events.index')->with('success','New Event Created Successfully');
+        }
+        
+        else{
+
+            $event = new Attendance;
+            $event = Event::findOrFail($request->event_id);
+            $event->users()->attach(Auth::user()->id);
+            return redirect()->route('events.index');
+        }
+        
 
     }
 
