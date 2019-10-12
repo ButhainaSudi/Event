@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('profile', function () {
+    return 'done';
+});
+
 Auth::routes();
 
 Route::get('/home', 'EventController@index')->name('home');
 Route::resource('events','EventController')->middleware('auth');
 Route::resource('comments','CommentController')->middleware('auth');
-Route::resource('eventuser','EventUserController');
