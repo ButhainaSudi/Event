@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventUsersTable extends Migration
+class Attendance extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateEventUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_users', function (Blueprint $table) {
+        Schema::create('attendance', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->uuid('user_id');
             $table->uuid('event_id');
+            $table->boolean('attendance')->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->timestamps();
         });
-
-        Schema::rename('event_users', 'event_user');
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateEventUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event_users');
+        Schema::dropIfExists('attendance');
     }
 }
