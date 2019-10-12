@@ -40,7 +40,8 @@
         
             <div class="col-md-8">
                 <div class="form-group {{ $errors->has('title') ? 'has-error' : "" }}">
-                    {{ Form::date('date', \Carbon\Carbon::now(), ['class'=>'form-control']) }}
+                    
+                    {{ Form::date('date', \Carbon\Carbon::now(), ['class'=>'form-control datepicker']) }}
                     {{ $errors->first('date', '<p class="help-block">:message</p>') }}
                 </div>
             </div>
